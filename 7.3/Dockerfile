@@ -5,6 +5,7 @@ RUN apk add --no-cache --virtual .build-deps \
     $PHPIZE_DEPS \
     curl-dev \
     imagemagick-dev \
+    gmp-dev \
     libtool \
     libxml2-dev \
     postgresql-dev \
@@ -34,6 +35,7 @@ RUN apk add --no-cache \
     postgresql-libs \
     rsync \
     zlib-dev
+
 
 # Install PECL and PEAR extensions
 RUN pecl install \
@@ -66,6 +68,7 @@ RUN docker-php-ext-install \
     pcntl \
     tokenizer \
     xml \
+    gmp \
     zip
 
 # Install composer
