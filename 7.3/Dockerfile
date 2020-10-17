@@ -39,11 +39,13 @@ RUN apk add --no-cache \
 
 # Install PECL and PEAR extensions
 RUN pecl install \
+    redis \
     imagick \
     xdebug
 
 # Enable PECL and PEAR extensions
 RUN docker-php-ext-enable \
+    redis \
     imagick \
     xdebug
 
